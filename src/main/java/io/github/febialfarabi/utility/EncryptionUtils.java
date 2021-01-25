@@ -100,7 +100,7 @@ public final class EncryptionUtils {
      * @param key at least 24 character long key (required)
      * @param inputString the string to encrypt (required)
      * @return the encrypted version of the inputString
-     * @throws EncryptionException in the event of an encryption failure
+     * @throws RuntimeException in the event of an encryption failure
      */
     public static String encrypt(String key, String inputString) throws RuntimeException {
         isValidKey(key);
@@ -144,7 +144,7 @@ public final class EncryptionUtils {
      * @param key the key used to originally encrypt the string (required)
      * @param inputString the encrypted string (required)
      * @return the decrypted version of inputString
-     * @throws EncryptionException in the event of an encryption failure
+     * @throws RuntimeException in the event of an encryption failure
      */
     public static String decrypt(String key, String inputString) throws RuntimeException {
 //        Assert.hasText(key, "A key is required to attempt decryption");
