@@ -6,8 +6,6 @@ import com.google.common.primitives.Primitives;
 import com.google.gson.Gson;
 import org.apache.commons.lang.StringUtils;
 import org.modelmapper.TypeToken;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceResolvable;
 import org.springframework.context.NoSuchMessageException;
@@ -27,7 +25,6 @@ import java.util.regex.Pattern;
 public class Utils {
 
 
-    private static final Logger logger = LoggerFactory.getLogger(Utils.class.getName());
 
     public static String readResourceAsString(Resource resource) throws Exception{
         InputStream resourcee = resource.getInputStream();
@@ -41,7 +38,6 @@ public class Utils {
     public static String readJsonFromResource(String fileInResource) throws Exception{
         File file = ResourceUtils.getFile("classpath:"+fileInResource);
         String content = new String(Files.readAllBytes(file.toPath()));
-        logger.debug(content);
         return content ;
     }
 
@@ -75,7 +71,7 @@ public class Utils {
             }
 
         } catch (Exception e) {
-            logger.error("Error occurred while loading object list from file " + fileInResource, e);
+            e.printStackTrace();
             return Collections.emptyList();
         }
         return new ArrayList<>() ;
