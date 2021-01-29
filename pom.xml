@@ -80,6 +80,7 @@
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
             </exclusions>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -179,6 +180,32 @@
                     <failOnError>false</failOnError>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <!-- need to relocate used 3rd party dependencies and their transitive dependencies -->
+                            <relocations>
+                                <relocation>
+                                    <pattern>io.toolisticon.annotationprocessortoolkit</pattern>
+                                    <shadedPattern>
+                                        io.github.febialfarabi._3rdparty.io.toolisticon.annotationprocessortoolkit
+                                    </shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
 
             <!--Sonatype Distribution-->
             <plugin>
