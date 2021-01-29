@@ -1,9 +1,6 @@
 package io.github.febialfarabi.utility;
 
 import java9.util.function.Consumer;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 
 public class PhoneNumberUtil {
@@ -40,13 +37,33 @@ public class PhoneNumberUtil {
     }
 
 
-    @AllArgsConstructor
     public static class ValidPhoneNumber{
-        @Getter@Setter
         boolean valid ;
-        @Getter@Setter
-        public String phoneNumber;
+        String phoneNumber;
 
+        public ValidPhoneNumber(){
+
+        }
+        public ValidPhoneNumber(boolean valid, String phoneNumber){
+            this.valid = valid ;
+            this.phoneNumber = phoneNumber ;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public boolean isValid() {
+            return valid;
+        }
+
+        public void setValid(boolean valid) {
+            this.valid = valid;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
     }
 
 }

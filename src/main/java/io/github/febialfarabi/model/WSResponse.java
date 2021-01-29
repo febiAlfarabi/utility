@@ -1,19 +1,64 @@
 package io.github.febialfarabi.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class WSResponse<D, E> {
 
-    @Getter
-    @Setter
     int code ;
-    @Getter@Setter D data ;
-    @Getter@Setter String message ;
-    @Getter@Setter E messageError ;
-    @Getter long totalElement ;
-    @Getter int totalPage ;
-    @Getter int pageElement ;
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    D data ;
+
+    public D getData() {
+        return data;
+    }
+
+    public void setData(D data) {
+        this.data = data;
+    }
+
+    String message ;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    E messageError ;
+
+    public E getMessageError() {
+        return messageError;
+    }
+
+    public void setMessageError(E messageError) {
+        this.messageError = messageError;
+    }
+
+    long totalElement ;
+
+    public long getTotalElement() {
+        return totalElement;
+    }
+
+    int totalPage ;
+
+    public int getTotalPage() {
+        return totalPage;
+    }
+
+    int pageElement ;
+
+    public int getPageElement() {
+        return pageElement;
+    }
 
     public static <D> WSResponse instance(int code, String message, D data){
         WSResponse instance = new WSResponse<>();

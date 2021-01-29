@@ -1,14 +1,20 @@
 package io.github.febialfarabi.utility;
 
-import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Mapper {
 
-    @Getter
     Map map ;
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
 
     public static Mapper init(){
         Mapper mapper = new Mapper();
