@@ -43,7 +43,7 @@
     <groupId>io.github.febialfarabi</groupId>
     <artifactId>utility</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.18</version>
+    <version>1.0.19-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -54,7 +54,7 @@
         <connection>scm:git:https://github.com/febiAlfarabi/utility.git</connection>
         <url>https://github.com/febiAlfarabi/utility</url>
         <developerConnection>scm:git:https://github.com/febiAlfarabi/utility.git</developerConnection>
-        <tag>utility-1.0.18</tag>
+        <tag>utility-1.0.2</tag>
     </scm>
 
     <distributionManagement>
