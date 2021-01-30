@@ -20,7 +20,7 @@ public class NumberUtil {
         amount = amount.setScale(0, RoundingMode.HALF_UP);
         amount = amount.divide(roundingPrice);
         amount = amount.setScale(0, RoundingMode.HALF_UP);
-        amount = amount.subtract(roundingPrice);
+        amount = amount.multiply(roundingPrice);
         return amount ;
     }
 
