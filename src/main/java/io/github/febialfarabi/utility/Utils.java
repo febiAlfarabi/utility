@@ -78,7 +78,7 @@ public class Utils {
     }
 
     public static Sort sort(Boolean asc, String sortir){
-        return new Sort(asc? Sort.Direction.ASC: Sort.Direction.DESC, sortir);
+        return Sort.by(asc? Sort.Direction.ASC: Sort.Direction.DESC, sortir);
     }
 
     public static <T> Page<T> paging(List<T> items, int page, int pageSizeLimit){
