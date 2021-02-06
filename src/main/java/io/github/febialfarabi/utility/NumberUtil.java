@@ -24,6 +24,15 @@ public class NumberUtil {
         return amount ;
     }
 
+    public static final BigDecimal currencyRoundDown(BigDecimal amount, BigDecimal roundingPrice){
+        amount = amount.setScale(0, RoundingMode.HALF_DOWN);
+        amount = amount.divide(roundingPrice);
+        amount = amount.setScale(0, RoundingMode.HALF_DOWN);
+        amount = amount.multiply(roundingPrice);
+        return amount ;
+    }
+
+
     public static final BigDecimal amountOfPercent(BigDecimal amount, Double percent){
         BigDecimal amountOfPercent = amount.multiply(BigDecimal.valueOf(percent)).divide(BigDecimal.valueOf(100));
         return amountOfPercent;
